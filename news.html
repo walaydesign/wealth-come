@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>財來也運彩資訊網</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./public/css/aos/aos.css" />
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div
+        class="header_right d-flex align-items-center justify-content-xl-start justify-content-between gap-lg-4 gap-2"
+      >
+        <a href="./index.html" class="header_logo"
+          ><img src="./public/img/logo.png" alt=""
+        /></a>
+        <form class="header_login d-xl-flex d-none">
+          <div class="input-item">
+            <label for="">手機</label>
+            <input class="input-item_main" type="number" placeholder="請輸入" />
+          </div>
+          <div class="input-item">
+            <label for="">密碼</label>
+            <input class="input-item_main" type="password" placeholder="密碼" />
+          </div>
+          <button class="btn">登入</button>
+        </form>
+        <a
+          class="header_line"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-qrcode"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_36_3051)">
+              <path
+                class="line-bg"
+                d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                fill="#39CD00"
+              />
+              <path
+                class="line-main"
+                d="M19.5 11.7273C19.4893 11.8797 19.4698 12.0313 19.4414 12.1814C19.3465 12.7561 19.1522 13.3098 18.8673 13.8178C18.7309 14.0605 18.075 14.9823 17.8745 15.225C16.7659 16.56 14.9086 18.101 11.805 19.5996C11.7395 19.6312 11.6668 19.6448 11.5943 19.639C11.5218 19.6332 11.4522 19.6081 11.3926 19.5665C11.333 19.5248 11.2856 19.468 11.2553 19.4019C11.2249 19.3358 11.2128 19.2629 11.22 19.1905L11.3768 17.7819C11.3887 17.6741 11.3573 17.566 11.2895 17.4814C11.2218 17.3968 11.1232 17.3425 11.0155 17.3305C9.98295 17.2272 8.97718 16.9404 8.04545 16.4837C5.91818 15.4323 4.5 13.5546 4.5 11.415C4.5 8.1205 7.85727 5.45459 12 5.45459C14.0809 5.45459 15.9627 6.13641 17.3182 7.21777C18.5877 8.23368 19.4005 9.61232 19.4877 11.1423C19.5023 11.337 19.5064 11.5322 19.5 11.7273Z"
+                fill="white"
+              />
+              <path
+                class="line-bg"
+                d="M9.93272 12.735C9.969 12.7705 9.99773 12.8129 10.0172 12.8598C10.0366 12.9067 10.0464 12.957 10.0459 13.0077C10.0461 13.0582 10.0363 13.1081 10.0171 13.1548C9.99795 13.2014 9.96976 13.2438 9.93416 13.2795C9.89856 13.3153 9.85626 13.3436 9.80968 13.363C9.7631 13.3823 9.71316 13.3923 9.66272 13.3923H8.12863C8.02676 13.3919 7.92915 13.3513 7.85712 13.2792C7.78508 13.2072 7.74445 13.1096 7.74409 13.0077V10.11C7.74375 10.0593 7.75359 10.009 7.77303 9.96215C7.79247 9.9153 7.82112 9.87284 7.85727 9.83726C7.91094 9.78342 7.97942 9.74676 8.05399 9.73195C8.12855 9.71714 8.20584 9.72484 8.27602 9.75408C8.34619 9.78332 8.40609 9.83278 8.44807 9.89616C8.49006 9.95953 8.51225 10.034 8.51181 10.11V12.6232H9.66272C9.71292 12.6228 9.76269 12.6325 9.80907 12.6517C9.85544 12.6709 9.89749 12.6992 9.93272 12.735Z"
+                fill="#00C200"
+              />
+              <path
+                class="line-bg"
+                d="M11.1818 10.0268V13.0909C11.1814 13.1704 11.1497 13.2465 11.0935 13.3026C11.0373 13.3588 10.9612 13.3906 10.8818 13.3909H10.71C10.6304 13.3909 10.5541 13.3593 10.4978 13.303C10.4416 13.2468 10.41 13.1705 10.41 13.0909V10.0268C10.41 9.94725 10.4416 9.87095 10.4978 9.81469C10.5541 9.75843 10.6304 9.72682 10.71 9.72682H10.8777C10.9174 9.72646 10.9568 9.73394 10.9936 9.74884C11.0303 9.76374 11.0638 9.78576 11.0921 9.81364C11.1203 9.84151 11.1428 9.87469 11.1582 9.91128C11.1736 9.94786 11.1816 9.98713 11.1818 10.0268Z"
+                fill="#00C200"
+              />
+              <path
+                class="line-bg"
+                d="M14.7436 10.11V12.9914C14.7437 13.095 14.7035 13.1947 14.6315 13.2692C14.5595 13.3438 14.4613 13.3874 14.3577 13.3909C14.2606 13.3894 14.1677 13.3514 14.0973 13.2846C14.0836 13.2737 13.5682 12.6028 13.1304 12.0382C12.8032 11.6169 12.5195 11.2487 12.5195 11.2487V13.0064C12.5198 13.0809 12.4983 13.1539 12.4578 13.2164C12.4172 13.2788 12.3593 13.3282 12.2911 13.3583C12.223 13.3883 12.1475 13.3979 12.074 13.3858C12.0005 13.3737 11.9321 13.3404 11.8773 13.29C11.8377 13.2542 11.806 13.2104 11.7844 13.1615C11.7628 13.1127 11.7517 13.0598 11.7518 13.0064V10.1264C11.7505 10.0252 11.7882 9.92728 11.8569 9.85295C11.9257 9.77861 12.0203 9.73348 12.1213 9.72686C12.1785 9.72592 12.2352 9.73767 12.2873 9.76125C12.3394 9.78482 12.3857 9.81965 12.4227 9.86322C12.4391 9.88231 13.2313 10.9132 13.6773 11.4996C13.8545 11.7287 13.9773 11.8896 13.9773 11.8896V10.1169C13.978 10.0155 14.0186 9.9184 14.0903 9.8467C14.162 9.77499 14.259 9.73439 14.3604 9.73368C14.4609 9.73366 14.5573 9.77309 14.629 9.84349C14.7007 9.91388 14.7418 10.0096 14.7436 10.11Z"
+                fill="#00C200"
+              />
+              <path
+                class="line-bg"
+                d="M16.0909 11.9413V12.6231H17.2405C17.2928 12.62 17.3452 12.6276 17.3945 12.6455C17.4438 12.6634 17.4889 12.6911 17.527 12.7271C17.5652 12.763 17.5956 12.8064 17.6164 12.8546C17.6372 12.9027 17.6479 12.9546 17.6479 13.007C17.6479 13.0594 17.6372 13.1113 17.6164 13.1594C17.5956 13.2075 17.5652 13.2509 17.527 13.2869C17.4889 13.3228 17.4438 13.3506 17.3945 13.3685C17.3452 13.3864 17.2928 13.394 17.2405 13.3908H15.7023C15.6005 13.3905 15.5031 13.3498 15.4312 13.2777C15.3594 13.2057 15.3191 13.1081 15.3191 13.0063V10.1099C15.3195 10.0084 15.3599 9.91117 15.4317 9.83938C15.5035 9.7676 15.6008 9.72712 15.7023 9.72676H17.2364C17.2887 9.72364 17.3411 9.73125 17.3904 9.74913C17.4397 9.76701 17.4848 9.79478 17.523 9.83073C17.5611 9.86668 17.5915 9.91005 17.6123 9.95819C17.6331 10.0063 17.6438 10.0582 17.6438 10.1106C17.6438 10.163 17.6331 10.2149 17.6123 10.2631C17.5915 10.3112 17.5611 10.3546 17.523 10.3905C17.4848 10.4265 17.4397 10.4542 17.3904 10.4721C17.3411 10.49 17.2887 10.4976 17.2364 10.4945H16.0909V11.1763H17.2405C17.3421 11.1763 17.4395 11.2167 17.5114 11.2885C17.5833 11.3604 17.6236 11.4579 17.6236 11.5595C17.6236 11.6611 17.5833 11.7586 17.5114 11.8304C17.4395 11.9023 17.3421 11.9427 17.2405 11.9427L16.0909 11.9413Z"
+                fill="#00C200"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_36_3051">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <span class="header_line_text">加line免費送紅</span>
+        </a>
+      </div>
+      <nav class="header_nav">
+        <ul>
+          <li>
+            <a href="./index.html" class="header_nav_item">
+              <img class="header_icon" src="./public/img/home.png" alt="" />
+              <span class="header_nav_text">首頁</span>
+            </a>
+          </li>
+          <li>
+            <a href="./news.html" class="header_nav_item active">
+              <img class="header_icon" src="./public/img/news.png" alt="" />
+              <span class="header_nav_text">體育新聞</span>
+            </a>
+          </li>
+          <li>
+            <a href="./competition.html" class="header_nav_item">
+              <img class="header_icon" src="./public/img/analyse.png" alt="" />
+              <span class="header_nav_text">賽事分析</span>
+            </a>
+          </li>
+          <li>
+            <a href="./buy.html" class="header_nav_item">
+              <img class="header_icon" src="./public/img/cart.png" alt="" />
+              <span class="header_nav_text">方案購買</span>
+            </a>
+          </li>
+          <li>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#modal-login"
+              class="header_nav_item"
+            >
+              <img class="header_icon" src="./public/img/account.png" alt="" />
+              <span class="header_nav_text"
+                ><span class="d-lg-none">登入/</span>註冊</span
+              >
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="banner">
+        <div class="swiper-container banner_pic">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="banner_pic_item">
+                <img
+                  class="d-md-block d-none"
+                  src="./public/img/banner-1.png"
+                  alt=""
+                />
+                <img
+                  class="d-md-none"
+                  src="./public/img/banner-1-m.png"
+                  alt=""
+                />
+                <div class="banner_text_item">
+                  <div class="container">
+                    <h1 class="banner_text_title">
+                      提供高勝率<br />美籃賽事分析
+                    </h1>
+                    <div class="banner_text_content">
+                      <p>整合眾多美金盤口數據 強大操盤團隊解析</p>
+                      <p>給您最適合投資的運動賽事</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner_pic_item">
+                <img
+                  class="d-md-block d-none"
+                  src="./public/img/banner-2.png"
+                  alt=""
+                />
+                <img
+                  class="d-md-none"
+                  src="./public/img/banner-2-m.png"
+                  alt=""
+                />
+                <div class="banner_text_item">
+                  <div class="container">
+                    <h1 class="banner_text_title">
+                      提供美棒聯盟<br />獨家情報
+                    </h1>
+                    <div class="banner_text_content">
+                      <p>長期解盤莊家思維</p>
+                      <p>讓我們教你如何對決莊家 輕鬆獲利</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner_pic_item bg-dark">
+                <img
+                  class="d-md-block d-none"
+                  src="./public/img/banner-3.png"
+                  alt=""
+                />
+                <img
+                  class="d-md-none"
+                  src="./public/img/banner-3-m.png"
+                  alt=""
+                />
+                <div class="banner_text_item">
+                  <div class="container">
+                    <h1 class="banner_text_title">
+                      提供各項冰球<br />精華賽事分析
+                    </h1>
+                    <div class="banner_text_content">
+                      <p>投資不要只看獲利 還要看他能維持多久</p>
+                      <p>投資不是賭博 相信財來也 錢財也就來</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap mainContent">
+        <div class="sidebar">
+          <div class="row">
+            <div class="col-lg-12 col-md-8">
+              <div class="sidebar_item sidebar_news section">
+                <div class="sidebar_news_title">
+                  <img src="./public/img/masco.png" alt="" />
+                  <h2>體育新聞</h2>
+                </div>
+                <div class="sidebar_news_main">
+                  <div class="sidebar_news_item">
+                    <h3 class="news-title">
+                      「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                      原文網址: 「全球頭號毒梟」藏身台...
+                    </h3>
+                    <div class="news-info">
+                      <p class="news-info_date">2025/06/28</p>
+                      <a href="./news-detail.html" class="btn">MORE</a>
+                    </div>
+                  </div>
+                  <div class="sidebar_news_item">
+                    <h3 class="news-title">
+                      「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                      原文網址: 「全球頭號毒梟」藏身台...
+                    </h3>
+                    <div class="news-info">
+                      <p class="news-info_date">2025/06/28</p>
+                      <a href="./news-detail.html" class="btn">MORE</a>
+                    </div>
+                  </div>
+                  <div class="sidebar_news_item">
+                    <h3 class="news-title">
+                      「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                      原文網址: 「全球頭號毒梟」藏身台...
+                    </h3>
+                    <div class="news-info">
+                      <p class="news-info_date">2025/06/28</p>
+                      <a href="./news-detail.html" class="btn">MORE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-4">
+              <div class="sidebar_item sidebar_qrcode section">
+                <img src="./public/img/qrcode.png" alt="" />
+                <div class="qrcode-text">
+                  <p class="qrcode-text_title">LINE ID</p>
+                  <p class="qrcode-text_content">cailaiye</p>
+                </div>
+              </div>
+              <a class="sidebar_ad">
+                <img src="./public/img/ad.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mainbar">
+          <div class="section">
+            <div class="title">
+              <img src="./public/img/money.png" alt="" />
+              <h2>體育新聞</h2>
+            </div>
+            <div class="news-list">
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="./news-detail.html" class="news-list_item">
+                <div class="news-list_text">
+                  <p class="news-info_date">2025/06/28</p>
+                  <h3 class="news-title">
+                    「全球頭號毒梟」藏身台灣遭驅逐出境！　年賺600億美金黯然被捕
+                    原文網址: 「全球頭號毒梟」藏身台...
+                  </h3>
+                </div>
+                <div class="news-list_arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.16671 10H15.8334"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                      stroke="#AE101E"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div class="pagination">
+              <a href="" class="pagination_arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.8334 10H4.16669"
+                    stroke="#AE101E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 15.8333L4.16669 9.99996L10 4.16663"
+                    stroke="#AE101E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <ul>
+                <li>
+                  <a href="" class="active"><span>1</span></a>
+                </li>
+                <li>
+                  <a href=""><span>2</span></a>
+                </li>
+                <li>
+                  <a href=""><span>3</span></a>
+                </li>
+                <li>
+                  <a href=""><span>4</span></a>
+                </li>
+                <li>
+                  <a href=""><span>5</span></a>
+                </li>
+              </ul>
+              <a href="" class="pagination_arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.16671 10H15.8334"
+                    stroke="#AE101E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 15.8333L15.8334 9.99996L10 4.16663"
+                    stroke="#AE101E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <p>
+            網站內容屬資訊性質，提供資料僅供瀏覽者作參考用途，切勿參與賭博觸犯法例，請勿以身試法。<br />
+            本站提供您的內容請勿任意轉載或複製。提醒您：進入本站、參與運動彩劵者需年滿20歲，未滿者不得加入行使任何會員之權利
+          </p>
+          <hr />
+          <p>Copyright © 2025 財來也運彩資訊網 all rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    
+
+    <div
+      class="modal fade modal-member"
+      id="modal-login"
+      tabindex="-1"
+      aria-labelledby="modal-loginLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-head">
+            <h3 class="modal_title">會員登入</h3>
+            <button class="modal-member_x" data-bs-dismiss="modal">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L6 18"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6 6L18 18"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="input-item">
+                <label for="">手機</label>
+                <input
+                  class="input-item_main"
+                  type="number"
+                  placeholder="手機"
+                />
+              </div>
+              <div class="input-item">
+                <label for="">密碼</label>
+                <input
+                  class="input-item_main"
+                  type="password"
+                  placeholder="密碼"
+                />
+              </div>
+            </div>
+            <div class="modal-member_btns">
+              <a href="./signup.html" class="btn-signup">註冊</a>
+              <button class="btn">登入</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade modal-qrcode"
+      id="modal-qrcode"
+      tabindex="-1"
+      aria-labelledby="modal-qrcodeLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="modal-member_x" data-bs-dismiss="modal">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <img src="./public/img/qrcode.webp" alt="" />
+          <div class="qrcode-text">
+            <p class="qrcode-text_title">LINE ID</p>
+            <p class="qrcode-text_content">cailaiye</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/aos/aos.js"></script>
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/common.js"></script>
+  </body>
+</html>
