@@ -11,14 +11,10 @@ $gray-2: #ececec;
 $gray-3: #a1a1a1;
 $bg: #fff8ed;
 
-$white-30: rgba(255, 255, 255, 0.3);
-$white-15: rgba(255, 255, 255, 0.15);
-$white-75: rgba(255, 255, 255, 0.75);
-$third: #081b4e;
-$border: $white-30;
 @mixin sec-effect {
   border-radius: 24px;
   padding: 24px;
+  background-color: $white;
 }
 
 body {
@@ -193,6 +189,7 @@ img {
       font-size: 14px;
       font-weight: 700;
       transition: $transition;
+      line-height: 1.2;
     }
     &:hover {
       background-color: #35c000;
@@ -293,10 +290,6 @@ img {
     &_icon {
       display: block;
     }
-    &.scroll {
-      background-color: rgba(8, 27, 78, 0.8);
-      backdrop-filter: inherit;
-    }
     &_greet {
       font-size: 12px;
       font-weight: normal;
@@ -306,8 +299,6 @@ img {
   @media screen and (max-width: 575px) {
     &_line {
       &_text {
-        // padding: 0 12px;
-        // height: 36px;
         font-size: 12px;
       }
     }
@@ -439,9 +430,7 @@ main {
   width: 300px;
   &_item {
     margin-bottom: 28px;
-    background-color: $white;
-    padding: 24px;
-    border-radius: 24px;
+    @include sec-effect();
     border: 1px solid $primary;
   }
   &_qrcode {
@@ -658,7 +647,6 @@ main {
     &_title {
       font-size: 60px;
       font-weight: 900;
-      text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.15);
       margin-bottom: 28px;
       br {
         display: none;
@@ -725,33 +713,6 @@ main {
   }
 }
 
-.analyze {
-  &_title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    .title {
-      margin: 0;
-    }
-    &_en {
-      font-size: 24px;
-      font-family: $font-mukta;
-      color: $primary;
-      margin: 0;
-      font-weight: 500;
-    }
-  }
-  @media screen and (max-width: 991px) {
-    // padding: 24px 12px !important;
-    &_title {
-      &_en {
-        font-size: 20px;
-      }
-    }
-  }
-}
-
 .footer {
   padding: 32px 0;
   background-color: $primary;
@@ -774,9 +735,7 @@ main {
 .buy {
   &_item {
     margin-bottom: 12px;
-    padding: 24px;
-    border-radius: 24px;
-    background-color: $white;
+    @include sec-effect();
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1015,43 +974,6 @@ main {
       opacity: 0.7;
     }
   }
-  &_checkbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 25px;
-    input {
-      width: 20px;
-      height: 20px;
-      position: relative;
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-      }
-      &::before {
-        width: 100%;
-        height: 100%;
-        background: $white;
-        z-index: 0;
-        border: 1px solid $border;
-      }
-      &:checked {
-        &::before {
-          opacity: 0;
-        }
-      }
-    }
-    label {
-      a {
-        text-decoration: underline;
-        color: $primary;
-      }
-    }
-  }
   .input-item {
     margin-bottom: 16px;
     label {
@@ -1284,9 +1206,7 @@ main {
 .record {
   &_item {
     margin-bottom: 24px;
-    background-color: $white;
-    padding: 24px;
-    border-radius: 24px;
+    @include sec-effect();
     position: relative;
     display: flex;
     align-items: center;
@@ -1295,8 +1215,8 @@ main {
     width: 85%;
     display: flex;
     align-items: center;
-    >img {
-        width: 90px;
+    > img {
+      width: 90px;
     }
   }
   &_text {
@@ -1377,24 +1297,22 @@ main {
   }
   @media screen and (max-width: 991px) {
     &_item {
-        flex-wrap: wrap;
+      flex-wrap: wrap;
     }
     &_main {
-        width: 100%;
-        padding-bottom: 12px;
+      width: 100%;
+      padding-bottom: 12px;
     }
     &_total {
-        width: 100%;
-        padding-top: 12px;
-        border-top: 1px solid $gray-2;
+      width: 100%;
+      padding-top: 12px;
+      border-top: 1px solid $gray-2;
     }
   }
 }
 
 .signup-form {
-  padding: 24px;
-  border-radius: 24px;
-  background-color: $white;
+  @include sec-effect();
   .row {
     margin-left: -20px;
     margin-right: -20px;
@@ -1422,7 +1340,6 @@ main {
       margin: 0;
     }
     &_inner {
-      //   margin: 12px 0;
       margin-bottom: 20px;
       border-radius: 20px;
       background-color: #f7f7f7;
@@ -1478,23 +1395,21 @@ main {
 }
 
 .product {
-    .row {
-        margin-left: -12px;
-        margin-right: -12px;
-        >div {
-            padding-left: 12px;
-            padding-right: 12px;
-        }
+  .row {
+    margin-left: -12px;
+    margin-right: -12px;
+    > div {
+      padding-left: 12px;
+      padding-right: 12px;
     }
+  }
   &_item {
-    background-color: $white;
-    padding: 24px;
-    border-radius: 24px;
+    @include sec-effect();
     margin-bottom: 24px;
     display: flex;
     align-items: center;
     .product-info {
-        width: 70%;
+      width: 70%;
     }
   }
   &_remain {
@@ -1505,7 +1420,7 @@ main {
     justify-content: flex-end;
     p {
       margin: 0;
-        transform: translateY(-8px);
+      transform: translateY(-8px);
       &.num {
         color: $secondary;
         font-size: 32px;
@@ -1515,19 +1430,19 @@ main {
     }
   }
 
- @media screen and (max-width: 991px) {
+  @media screen and (max-width: 991px) {
     &_item {
-        flex-wrap: wrap;
-        .product-info {
-            width: 100%;
-            margin-bottom: 12px;
-        }
+      flex-wrap: wrap;
+      .product-info {
+        width: 100%;
+        margin-bottom: 12px;
+      }
     }
     &_remain {
-        width: 100%;
-        justify-content: space-between;
-        padding-top: 12px;
-        border-top: 1px solid $gray-2;
+      width: 100%;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid $gray-2;
     }
- }
+  }
 }
